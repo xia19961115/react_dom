@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
-
+// npm i prop-types 下载props限制
+import propTypes  from 'prop-types'
 export default class Hello extends Component {
+    static propTypes={
+        add:propTypes.func.isRequired
+    }
     handleInput=(event) =>{
         const {keyCode,target} = event
         if (keyCode !== 13) return
@@ -10,6 +14,7 @@ export default class Hello extends Component {
         target.value = ''
     }
     render() {
+        console.log(this.props);
         return (
             <div>
                 <input type="text" onKeyUp={this.handleInput}/>
