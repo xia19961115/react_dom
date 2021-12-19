@@ -13,6 +13,9 @@ export default class Hello extends Component {
         this.props.add(target.value)
         target.value = ''
     }
+    componentDidMount() {
+        console.log(this);
+    }
     render() {
         console.log(this.props);
         return (
