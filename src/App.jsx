@@ -15,7 +15,14 @@ export default class App extends Component {
   }
   componentDidMount() {
     // 直接代理到api1上的了
-    axios.get('http://localhost:3000/api1/member').then(res => this.setState({arr:res.data.list}))
+    axios.get('http://localhost:3000/api1/member',{
+      params:{
+        name:'zhangsan'
+      },
+      headers:{
+        token:'xxxxxx'
+      }
+    }).then(res => this.setState({arr:res.data.list}))
   }
   render() {
     const {name,arr} = this.state
