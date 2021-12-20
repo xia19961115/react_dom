@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
+import PubSub from 'pubsub-js'
 // npm i prop-types 下载props限制
 import propTypes  from 'prop-types'
 export default class Hello extends Component {
+    state ={
+        name:'zhangsan'
+    }
     static propTypes={
         add:propTypes.func.isRequired
     }
@@ -14,13 +18,18 @@ export default class Hello extends Component {
         target.value = ''
     }
     componentDidMount() {
-        console.log(this);
+        // 接受者
+        PubSub.subscribe('listPublish',(_,data)=>{
+            console.log(data)
+            this.setState({name:data})
+        })
     }
     render() {
         console.log(this.props);
         return (
             <div>
                 <input type="text" onKeyUp={this.handleInput}/>
+                <div>{this.state.name}</div>
             </div>
         )
     }
