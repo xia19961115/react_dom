@@ -26,6 +26,33 @@ export default class App extends Component {
   //     }
   //   }).then(res => this.setState({arr:res.data.list}))
   // }
+
+  componentDidMount() {
+    // 直接代理到api1上的了
+    // axios.post (url,data(请求提),options(设置请求头等....))
+    axios.post('https://www.imooc.com/api/http/search/suggest',{
+      data:{}
+    },{
+      params:{
+        name:'zhangsan'
+      },
+      headers:{
+        token:'xxxxxxabc'
+      }
+    }).then(res => this.setState({arr:res.data.list}))
+    // axios('https://www.imooc.com/api/http/search/suggest',{
+    //   method: 'POST',
+    //   params:{
+    //     name:'zhangsan'
+    //   },
+    //   data: {
+    //     sex:"female"
+    //   },
+    //   headers:{
+    //     token:'xxxxxx'
+    //   }
+    // })
+  }
   render() {
     const {name,arr} = this.state
     console.log(arr);
