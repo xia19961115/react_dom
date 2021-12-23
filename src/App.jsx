@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link,Route,Routes} from 'react-router-dom'
+import {Link,NavLink,Route} from 'react-router-dom'
 import Hello from './components/Hello'
 import List from './components/List'
 import Test from './components/Test'
@@ -12,7 +12,7 @@ export default class App extends Component {
   state = {
     name:'yunmu',
     arr:[],
-    isShow:false
+    isShow:!false
   }
   // 接受子组件回调的参数
   add=(value)=>{
@@ -58,6 +58,7 @@ export default class App extends Component {
     // })
   }
   render() {
+    console.log(process.env);
     const {name,arr,isShow} = this.state
     console.log(arr);
     return (
@@ -70,10 +71,12 @@ export default class App extends Component {
           isShow ? <Test /> :
           <Demo />
         }
-          <Link to="/demo"> 到哪我 </Link>
-          <Routes>
+          <Link></Link>
+          <NavLink activeClassName='xxx'  to="/demo"> 到哪我 </NavLink>
+          <Route path="/demo" component={Demo} />
+          {/* <Routes>
             <Route path="/demo" element={<Demo />} />
-          </Routes>
+          </Routes> */}
       </div>
 
     )
