@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import {Link,NavLink,Route} from 'react-router-dom'
+// import { Button } from 'antd';
+import 'antd/dist/antd.css';
 import Hello from './components/Hello'
 import List from './components/List'
 import Test from './components/Test'
 import Demo from './components/Demo'
+import MyButton from './components/Button';
 // 通过npm i axios  引入
 import axios from 'axios'
 console.log(axios);
@@ -74,6 +77,8 @@ export default class App extends Component {
           <Link></Link>
           <NavLink activeClassName='xxx'  to="/demo"> 到哪我 </NavLink>
           <Route path="/demo" component={Demo} />
+          {/* <Button type="primary">Primary Button</Button> */}
+          <MyButton disabled type="primary" children="点我" />
           {/* <Routes>
             <Route path="/demo" element={<Demo />} />
           </Routes> */}
