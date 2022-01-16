@@ -25,7 +25,7 @@ export default class Hello extends Component {
         })
     }
     render() {
-        console.log(this.props);
+        console.log('hello组件的props', this.props);
         return (
             <div>
                 <input type="text" onKeyUp={this.handleInput}/>

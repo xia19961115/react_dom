@@ -78,7 +78,10 @@ export default class App extends Component {
           <NavLink activeClassName='xxx'  to="/demo"> 到哪我 </NavLink>
           <Route path="/demo" component={Demo} />
           {/* <Button type="primary">Primary Button</Button> */}
-          <MyButton disabled type="primary" children="点我" />
+          <MyButton 
+            disabled ={this.state.isShow === true ? false : true}
+            type="primary" 
+            children="点我" />
           {/* <Routes>
             <Route path="/demo" element={<Demo />} />
           </Routes> */}
