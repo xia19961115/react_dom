@@ -8,8 +8,8 @@ import Test from './components/Test'
 import Demo from './components/Demo'
 import MyButton from './components/Button';
 // 通过npm i axios  引入
-import axios from 'axios'
-console.log(axios);
+// import axios from 'axios'
+// console.log(axios);
 
 export default class App extends Component {
   state = {
