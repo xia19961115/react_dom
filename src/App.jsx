@@ -68,6 +68,7 @@ export default class App extends Component {
       <div>
         {arr.join()}
         {name}
+        {/* 给子组件 传递方法 在this.props中可以调用 */}
         <Hello add={this.add}/>
         <List />
         {
