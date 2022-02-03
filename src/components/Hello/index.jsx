@@ -17,6 +17,14 @@ export default class Hello extends Component {
         this.props.add(target.value)
         target.value = ''
     }
+    // hanldeClick = (type) => {
+    //     console.log(type);
+    //     console.log(this);
+    // }
+    hanldeClick(val){
+        console.log(val);
+        console.log(this);
+    }
     componentDidMount() {
         // 接受者(接受发布者的回掉, 一个参数 发布者的名称, 第二个参数是一个函数 (函数中有两个参数 第一个是多余项,第二个是发布者带来的参数))
         PubSub.subscribe('listPublish',(_,data)=>{
@@ -29,7 +37,8 @@ export default class Hello extends Component {
         return (
             <div>
                 <input type="text" onKeyUp={this.handleInput}/>
-                <div>{this.state.name}</div>
+                {/* <div onClick={()=>{this.hanldeClick('789')}}>{this.state.name}</div> */}
+                <div onClick={this.hanldeClick.bind(this,'123')}>{this.state.name}</div>
             </div>
         )
     }
