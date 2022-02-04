@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import store from '../../redux/store';
 
 export default class File extends Component {
+    // 当使用了redux的时候 需要在这个生命钩子中写store.subscribe 来重新渲染
     // componentDidMount(){
     //     store.subscribe(()=>{
     //         // this.forceUpdate()
@@ -14,7 +15,7 @@ export default class File extends Component {
     }
   render() {
       console.log('file',store);
-      // getState() 获取状态
+      // store.getState() 获取状态
     return (
         <div>
             <div>
