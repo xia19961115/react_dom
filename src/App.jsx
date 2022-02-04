@@ -6,6 +6,7 @@ import Hello from './components/Hello'
 import List from './components/List'
 import Test from './components/Test'
 import Demo from './components/Demo'
+import File from './components/File'
 import MyButton from './components/Button';
 // 通过npm i axios  引入
 // import axios from 'axios'
@@ -86,6 +87,7 @@ export default class App extends Component {
           {/* <Routes>
             <Route path="/demo" element={<Demo />} />
           </Routes> */}
+          <File />
       </div>
 
     )
