@@ -6,6 +6,7 @@ import {INCREMENT} from './constant'
 // 同步action
 export const createIncrementAction =data => ({ type:INCREMENT, data }) 
 
+// 明确:延迟的动作不想交给组件自身，想交给action
 // 异步action，就是指action的值为函数,异步action中一般都会调用同步action,
 // 异步action不是必须要用的 (也可以在方法中异步调用后在调用同步action)
 export const createAsyncIncrementAction = (data,dely) =>{
