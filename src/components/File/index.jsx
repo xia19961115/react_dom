@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // 引入store
 import store from '../../redux/store';
-import {createIncrementAction} from '../../redux/countAction'
+import {createIncrementAction,createAsyncIncrementAction} from '../../redux/countAction'
 
 export default class File extends Component {
     // 当使用了redux的时候 需要在这个生命钩子中写store.subscribe 来重新渲染
@@ -13,6 +13,14 @@ export default class File extends Component {
     // }
     handleClick = ()=>{
         store.dispatch(createIncrementAction(1))
+        /** 
+         *  dispatch中传入action 
+         *      1.action 为Object(普通对象) 为同步action
+         *      2.action 为function(函数) 为异步action
+         * */ 
+    }
+    handleClick1 =() =>{
+        store.dispatch(createAsyncIncrementAction(1,1000))
     }
   render() {
       console.log('file',store);
@@ -21,7 +29,8 @@ export default class File extends Component {
         <div>
             <div>
                 {store.getState()}
-                <button onClick={this.handleClick}>+</button>
+                <button onClick={this.handleClick}>+</button>&nbsp;
+                <button onClick={this.handleClick1}>异步+</button>
             </div>
         </div>
     )
