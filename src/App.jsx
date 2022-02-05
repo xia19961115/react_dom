@@ -8,6 +8,8 @@ import Test from './components/Test'
 import Demo from './components/Demo'
 import File from './components/File'
 import MyButton from './components/Button';
+import CountContainer from './containers/CountContainer';
+import store from './redux/store';
 // 通过npm i axios  引入
 // import axios from 'axios'
 // console.log(axios);
@@ -88,6 +90,9 @@ export default class App extends Component {
             <Route path="/demo" element={<Demo />} />
           </Routes> */}
           <File />
+          <div>--react-redux---</div>
+          {/* store 通过props的形式传递给容器组件 */}
+          <CountContainer store={store}/>
       </div>
 
     )
