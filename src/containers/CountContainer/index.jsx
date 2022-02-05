@@ -24,13 +24,29 @@ const mapStateToProps = (state) =>{
 	1.mapDispatchToProps函数返回的是一个对象；
 	2.返回的对象中的key就作为传递给UI组件props的key,value就作为传递给UI组件props的value
 	3.mapDispatchToProps用于传递操作状态的方法
+    4.mapDispatchToProps 传递的是一个对象  value 必须是一个action
 */
-const mapDispatchToProps = (dispatch) =>{
-    return {
-        add:(val) => dispatch(createIncrementAction(val)),
-        asyncAdd:(val,dely) => dispatch(createAsyncIncrementAction(val,dely)),
-    }
+// mapDispatchToProps 一般写法
+// const mapDispatchToProps = (dispatch) =>{
+//     return {
+//         add:(val) => dispatch(createIncrementAction(val)),
+//         asyncAdd:(val,dely) => dispatch(createAsyncIncrementAction(val,dely)),
+//     }
+// }
+
+// mapDispatchToProps 简写 (提供action既可)
+// react-redux 的api优化 会自动调用dispatch方法
+const mapDispatchToProps = {
+    add:createIncrementAction,
+    asyncAdd:createAsyncIncrementAction,
 }
 // connect第二次调用 第二次调用传入UI组件
 const CountContainer = connect(mapStateToProps,mapDispatchToProps)(Count)
+// const CountContainer = connect(
+//     state => ({count:state}),
+//     {
+//         add:createIncrementAction,
+//         asyncAdd:createAsyncIncrementAction, 
+//     }
+// )(Count)
 export default CountContainer
