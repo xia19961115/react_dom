@@ -1,3 +1,4 @@
+// 此组件用了 react-redux  容器组件是CountContainer
 import React, { Component } from 'react';
 
 export default class Count extends Component {

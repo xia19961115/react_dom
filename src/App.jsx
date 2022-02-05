@@ -92,7 +92,7 @@ export default class App extends Component {
           <File />
           <div>--react-redux---</div>
           {/* store 通过props的形式传递给容器组件 */}
-          <CountContainer store={store}/>
+          <CountContainer a={1} store={store}/>
       </div>
 
     )

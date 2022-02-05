@@ -1,3 +1,4 @@
+// 此组件 用了redux
 import React, { Component } from 'react';
 // 引入store
 import store from '../../redux/store';
