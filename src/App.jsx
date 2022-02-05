@@ -9,7 +9,8 @@ import Demo from './components/Demo'
 import File from './components/File'
 import MyButton from './components/Button';
 import CountContainer from './containers/CountContainer';
-import store from './redux/store';
+import CountContainerMin from './containers/CountContainerMin'
+// import store from './redux/store';
 // 通过npm i axios  引入
 // import axios from 'axios'
 // console.log(axios);
@@ -91,8 +92,10 @@ export default class App extends Component {
           </Routes> */}
           <File />
           <div>--react-redux---</div>
-          {/* store 通过props的形式传递给容器组件 */}
-          <CountContainer a={1} store={store}/>
+          {/* store 通过props的形式传递给容器组件 如果APP标签被包裹了 Provider标签且传递了store 则不需要再传递store*/}
+          <CountContainer a={1} />
+          <div>--react-redux 优化后再一个文件中(建议使用这样的)---</div>
+          <CountContainerMin />
       </div>
 
     )
