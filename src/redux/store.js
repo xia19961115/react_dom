@@ -6,6 +6,7 @@
 import {createStore,applyMiddleware} from 'redux'
 // 引入 reducer
 // import countReducer from './reducers/count_reducer'
+// 将汇总的reducer 引入
 import allReducer from './reducers/index'
 // 默认暴露
 import thunk from 'redux-thunk'
