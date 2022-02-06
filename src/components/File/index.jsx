@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // 引入store
 import store from '../../redux/store';
-import {createIncrementAction,createAsyncIncrementAction} from '../../redux/countAction'
+import {createIncrementAction,createAsyncIncrementAction} from '../../redux/actions/countAction'
 
 export default class File extends Component {
     // 当使用了redux的时候 需要在这个生命钩子中写store.subscribe 来重新渲染

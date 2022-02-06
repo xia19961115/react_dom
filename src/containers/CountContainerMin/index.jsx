@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 import {
     createAsyncIncrementAction,
     createIncrementAction
-} from '../../redux/countAction'
+} from '../../redux/actions/countAction'
 // ui组件
 class Count extends Component {
     handleClick = ()=>{

@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 import {
     createAsyncIncrementAction,
     createIncrementAction
-} from '../../redux/countAction'
+} from '../../redux/actions/countAction'
 // connect第一次调用 第一次调用传入2个方法,react-redux会帮我们回调
 /**
  * 	1.mapStateToProps函数返回的是一个对象；
