@@ -30,7 +30,7 @@ class Count extends Component {
 }
 const mapStateToProps = (state) =>{
     return {
-        count:state
+        count:state.he
     }
 }
 const mapDispatchToProps = {

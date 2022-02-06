@@ -17,7 +17,7 @@ import {
  */
 const mapStateToProps = (state) =>{
     return {
-        count:state
+        count:state.he
     }
 }
 /* 

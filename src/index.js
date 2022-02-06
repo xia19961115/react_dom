@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {HashRouter} from 'react-router-dom'
 import store from './redux/store'
 import {Provider} from 'react-redux'
-console.log(store);
+console.log('-----------------//-------------',store);
 // Provider组件是react-redux 提供的 对给使用到的容器组件自动传递store , 一般放在最外层
 ReactDOM.render(
   <Provider store={store}>

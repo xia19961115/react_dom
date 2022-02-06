@@ -29,7 +29,7 @@ export default class File extends Component {
     return (
         <div>
             <div>
-                {store.getState()}
+                {store.getState().he}
                 <button onClick={this.handleClick}>+</button>&nbsp;
                 <button onClick={this.handleClick1}>异步+</button>
             </div>
