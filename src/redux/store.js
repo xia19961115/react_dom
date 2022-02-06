@@ -8,11 +8,13 @@ import {createStore,applyMiddleware,combineReducers} from 'redux'
 import countReducer from './reducers/count_reducer'
 // 默认暴露
 import thunk from 'redux-thunk'
-console.log('-0-------------',combineReducers);
+// 使用redux开发工具 npm i redux-devtools-extension
+import {composeWithDevTools} from 'redux-devtools-extension'
 // combineReducers 可以将多个reducer状态整合成一个对象
 const allReducer = combineReducers({
 	he:countReducer
 })
 // 使用中间件applyMiddleware作为createStore第二个参数且调用传入thunk
-const store = createStore(allReducer,applyMiddleware(thunk))
+// 使用开发者工具composeWithDevTools 作为第二个参数调用 如果没用使用中间件 createStore(allReducer,composeWithDevTools())
+const store = createStore(allReducer,composeWithDevTools(applyMiddleware(thunk)))
 export default store
