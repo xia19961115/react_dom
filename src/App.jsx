@@ -8,6 +8,7 @@ import Test from './components/Test'
 import Demo from './components/Demo'
 import File from './components/File'
 import MyButton from './components/Button';
+import Hooks from './components/Hooks';
 import CountContainer from './containers/CountContainer';
 import CountContainerMin from './containers/CountContainerMin'
 // import store from './redux/store';
@@ -96,6 +97,8 @@ export default class App extends Component {
           <CountContainer a={1} />
           <div>--react-redux 优化后再一个文件中(建议使用这样的)---</div>
           <CountContainerMin />
+          <div>--------------------------hooks</div>
+          <Hooks />
       </div>
 
     )
