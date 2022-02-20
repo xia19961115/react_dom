@@ -1,7 +1,11 @@
 import React from 'react'
 
 export default function Hooks() {
-    const [a,b] = React.useState([0,1,2])
+    const [a,b] = React.useState(0)
+    React.useEffect(()=>{
+        console.log('@');
+    },[])
+    const refDom = React.useRef()
     console.log(b);
     const add = (val) => {
         // b((state) => {
@@ -10,10 +14,17 @@ export default function Hooks() {
             // }
         //     return {...state,...b}
         // })
-        b([...a,3])
+        b(a+1)
     }
     console.log(a);
+    function show () {
+        console.log(refDom.current.innerText)
+    }
   return (
-    <div onClick={() => add('accc')}>{a[2]}</div>
+    <div>
+        <div ref={refDom}>123</div>
+        <div onClick={() => add('accc')}>{a}</div>
+        <button onClick={show}>点击</button>
+    </div>
   )
 }
