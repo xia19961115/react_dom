@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import PubSub from 'pubsub-js';
 export default class List extends Component {
+    state ={
+        name:'ersan'
+    }
     Click() {
         console.log(this);
         console.log('77777');
@@ -9,10 +12,16 @@ export default class List extends Component {
         // 第二个参数 参数
         PubSub.publish('listPublish','李四')
     }
+    band = () => {
+        const obj = this.state
+        obj.name= 'xxx'
+        this.setState(obj)
+    }
     render() {
         return (
             <div>
                 <button onClick={this.Click.bind(this)}>点击</button>
+                <div onClick={this.band}>{this.state.name}</div>
             </div>
         )
     }
