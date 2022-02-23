@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PubSub from 'pubsub-js';
-export default class List extends Component {
+export default class List extends PureComponent {
     state ={
         name:'ersan'
     }
@@ -13,9 +13,11 @@ export default class List extends Component {
         PubSub.publish('listPublish','李四')
     }
     band = () => {
-        const obj = this.state
-        obj.name= 'xxx'
-        this.setState(obj)
+        // 在PureComponent 组件中 要修改引用地址
+        // const obj = this.state
+        // obj.name= 'xxx'
+        // console.log(obj === {...obj})
+        this.setState({name:'aaa'})
     }
     render() {
         return (
