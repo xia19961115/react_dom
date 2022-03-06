@@ -38,7 +38,6 @@ export default class App extends Component {
   //     }
   //   }).then(res => this.setState({arr:res.data.list}))
   // }
-
   componentDidMount() {
     // 直接代理到api1上的了
     // axios.post (url,data(请求提),options(设置请求头等....))
