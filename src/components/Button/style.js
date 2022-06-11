@@ -7,4 +7,9 @@ export const Button = styled(button)`
     &:hover{
         background-color: #f00;
     }
+    &:focus{
+        background-color: transparent;
+        color: #000;
+        border:none;
+    }
 `
