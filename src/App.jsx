@@ -11,6 +11,7 @@ import MyButton from './components/Button';
 import Hooks from './components/Hooks';
 import CountContainer from './containers/CountContainer';
 import CountContainerMin from './containers/CountContainerMin'
+import F from './components/F'
 // import store from './redux/store';
 // 通过npm i axios  引入
 // import axios from 'axios'
@@ -20,7 +21,8 @@ export default class App extends Component {
   state = {
     name:'yunmu',
     arr:[],
-    isShow:!false
+    isShow:!false,
+    fName: 'zhang'
   }
   // 接受子组件回调的参数
   add=(value)=>{
@@ -98,6 +100,15 @@ export default class App extends Component {
           <CountContainerMin />
           <div>--------------------------hooks</div>
           <Hooks />
+          <div>-----------------------------------</div>
+          {/* 在react组件中  onChange(事件) 传递的是属性 不会自动触发(只要props传递, 多少层 都可以触发) */}
+          {/* 在reactHTML元素中中  onChange(事件) 会在适当的时间段自动触发 */}
+          <F fName={this.state.fName} onChange={e => {
+            console.log(e,'eeeeeeeeeeeeeeeeeee');
+            this.setState({
+              fName: e
+            })
+          }}/>
       </div>
 
     )
